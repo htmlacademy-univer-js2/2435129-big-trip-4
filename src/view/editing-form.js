@@ -46,6 +46,7 @@ const renderDestinationContainer = (destination) => !destination ? '' :
   <p class="event__destination-description">${destination.description ? destination.description : ''}</p>
   <div class="event__photos-container">
               <div class="event__photos-tape">
+
               ${renderDestinationPictures(destination.pictures)}
               </div>
             </div>
@@ -258,7 +259,7 @@ export default class EditingFormView extends AbstractStatefulView{
   #setInnerHandlers = () => {
     this.element.querySelector('.event__type-list').addEventListener('change', this.#pointTypeChangeHandler);
     this.element.querySelector('.event__input').addEventListener('change', this.#pointDestinationChangeHandler);
-    if (this.#offersByType && this.#offersByType.offers.length > 0){
+    if (this.#offersByType & this.#offersByType.offers.length > 0){
       this.element.querySelector('.event__available-offers').addEventListener('change', this.#pointOffersChangeHandler);
     }
     this.element.querySelector('.event__input--price').addEventListener('change', this.#pointPriceChangeHandler);
